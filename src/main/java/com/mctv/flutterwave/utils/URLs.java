@@ -13,5 +13,5 @@ public class URLs {
     /**
      * The URL to this API.
      */
-    public static final String MICROSERVICE_URL = "https://ece7-102-222-146-74.ngrok.io";
+    public static final String MICROSERVICE_URL = "https://kitsao-fujo.herokuapp.com";
 }
