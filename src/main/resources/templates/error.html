@@ -52,14 +52,10 @@
 
 <script th:inline="javascript">
     var ref = [
-        [$ {
-            tx_ref
-        }]
+        [$ {tx_ref}]
     ];
     var url = [
-        [$ {
-            url
-        }]
+        [$ {url}]
     ];
     var button = document.getElementById('retry');
     button.addEventListener('click', function() {
