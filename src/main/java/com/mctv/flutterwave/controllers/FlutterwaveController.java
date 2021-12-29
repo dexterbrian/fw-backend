@@ -92,52 +92,57 @@ public class FlutterwaveController implements FlutterwaveService {
         // payload.setRedirect_url(MICROSERVICE_URL + "/flutterwave/callback/");
         // save to database
         saveResponse(status, tx_ref, transaction_id);
-        if (status.equals("successful")) {
-            // return new ModelAndView("redirect:https://mymovies.africa/view/" +
-            // payload.getMeta().getContentRef()
-            return new ModelAndView("redirect:" + MICROSERVICE_URL + "/flutterwave/confirmation/" + transaction_id);
-        } else {
-            /* handle transaction errors */
-            String message;
-            switch (status) {
-                case "cancelled":
-                    message = "Transaction cancelled";
-                    break;
-                case "declined":
-                    message = "Transaction declined by issuer";
-                    break;
-                case "timed_out":
-                    message = "Transaction timed out";
-                    break;
-                case "insufficient_funds":
-                    message = "Transaction declined due to insufficient funds";
-                    break;
-                case "aborted":
-                    message = "Transaction aborted";
-                    break;
-                case "exceeded_retry_limit":
-                    message = "Transaction exceeded retry limit";
-                    break;
-                case "declined_avs":
-                    message = "Transaction declined due to address verification";
-                    break;
-                case "declined_csc":
-                    message = "Transaction declined due to card security code";
-                    break;
-                case "declined_avs_csc":
-                    message = "Transaction declined due to address verification and card security code";
-                    break;
-                case "authentication_not_available":
-                    message = "Authentication is not currently available";
-                    break;
-                default:
-                    message = "Transaction could not be processed";
-                    break;
-            }
-            return new ModelAndView("redirect:" + MICROSERVICE_URL + "/error?status=" + status + "&message=" + message
-                    + "&tx_ref=" + tx_ref);
+        // if (status.equals("successful")) {
+        // // return new ModelAndView("redirect:https://mymovies.africa/view/" +
+        // // payload.getMeta().getContentRef()
+        // return new ModelAndView("redirect:" + MICROSERVICE_URL +
+        // "/flutterwave/confirmation/" + transaction_id);
+        // } else {
+        // /* handle transaction errors */
+        String message;
+        switch (status) {
+            case "successful":
+                return new ModelAndView("redirect:" + MICROSERVICE_URL + "/flutterwave/confirmation/" + transaction_id);
+            case "cancelled":
+                message = "Transaction cancelled";
+                break;
+            case "declined":
+                message = "Transaction declined by issuer";
+                break;
+            case "timed_out":
+                message = "Transaction timed out";
+                break;
+            case "insufficient_funds":
+                message = "Transaction declined due to insufficient funds";
+                break;
+            case "aborted":
+                message = "Transaction aborted";
+                break;
+            case "exceeded_retry_limit":
+                message = "Transaction exceeded retry limit";
+                break;
+            case "declined_avs":
+                message = "Transaction declined due to address verification";
+                break;
+            case "declined_csc":
+                message = "Transaction declined due to card security code";
+                break;
+            case "declined_avs_csc":
+                message = "Transaction declined due to address verification and card security code";
+                break;
+            case "authentication_not_available":
+                message = "Authentication is not currently available";
+                break;
+            default:
+                message = "Transaction could not be processed";
+                return new ModelAndView(
+                        "redirect:" + MICROSERVICE_URL + "/error?status=internal_error" + "&message=" + message
+                                + "&tx_ref=" + tx_ref);
         }
+        return new ModelAndView("redirect:" + MICROSERVICE_URL + "/error?status=" + status + "&message=" + message
+                + "&tx_ref=" + tx_ref);
     }
+    // }
 
     /**
      * @param status         The status of the payment
