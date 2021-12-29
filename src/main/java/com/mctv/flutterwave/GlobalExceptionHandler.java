@@ -26,8 +26,21 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(FeignException.BadRequest.class)
     public ModelAndView handleFeignException(FeignException e, HttpServletResponse response) {
         response.setStatus(200);
+        String status;
+        String message;
         JSONObject res = new JSONObject(e.contentUTF8());
-        return new ModelAndView("redirect:" + MICROSERVICE_URL + "/error?status=" + res.getString("status") + "&message=" + res.getString("message"));
+        if(res.getString("status").isEmpty()){
+            status = "unspecified error";
+        }else{
+            status = res.getString("status");
+        }
+        if(res.getString("message").isEmpty()){
+            message = "unspecified message";
+        }else{
+            message = res.getString("message");
+        }
+
+        return new ModelAndView("redirect:" + MICROSERVICE_URL + "/error?status=" + status + "&message=" + message);
 
     }
 }
