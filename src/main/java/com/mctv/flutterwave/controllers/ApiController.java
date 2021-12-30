@@ -42,7 +42,7 @@ public class ApiController implements ApiService {
     }
 
     /**
-     * @param email           The user's email address used to fetch the user's
+     * @param email           The current user's email address used to fetch the user's
      *                        details
      * @param ref             The content's reference used to fetch the content's
      *                        details
