@@ -47,7 +47,6 @@ public class PaymentRecordController implements BackendService {
     @Override
     public BackendResponse recordPayment(String user_id, String purchase_type, String ref, String isflutterwave,
             String currency, String transactioncode) {
-        // TODO Auto-generated method stub
         return backendServiceProxy.recordPayment(user_id, purchase_type, ref, isflutterwave, currency, transactioncode);
     }
 
