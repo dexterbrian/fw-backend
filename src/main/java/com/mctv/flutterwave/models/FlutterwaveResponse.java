@@ -13,7 +13,8 @@ import java.util.UUID;
 @Entity
 
 /**
- * The class Flutterwave response implements serializable. Models the response gotten from the flutterwave api.
+ * The class Flutterwave response implements serializable. Models the response
+ * gotten from the flutterwave api.
  */
 public class FlutterwaveResponse implements Serializable {
     @Id
@@ -26,14 +27,12 @@ public class FlutterwaveResponse implements Serializable {
     @Expose
     private String transaction_id;
 
-
     /**
      * Flutterwave response
      */
     public FlutterwaveResponse() {
 
     }
-
 
     /**
      * Gets the identifier
@@ -45,7 +44,6 @@ public class FlutterwaveResponse implements Serializable {
         return id;
     }
 
-
     /**
      * Sets the identifier
      *
@@ -56,7 +54,6 @@ public class FlutterwaveResponse implements Serializable {
         this.id = id;
     }
 
-
     /**
      * Gets the status
      *
@@ -66,7 +63,6 @@ public class FlutterwaveResponse implements Serializable {
 
         return Status;
     }
-
 
     /**
      * Sets the status
@@ -80,34 +76,36 @@ public class FlutterwaveResponse implements Serializable {
 
     @Override
 
-/**
- *
- * Equals
- *
- * @param o  the o
- * @return boolean
- */
+    /**
+     *
+     * Equals
+     *
+     * @param o the o
+     * @return boolean
+     */
     public boolean equals(Object o) {
 
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         FlutterwaveResponse that = (FlutterwaveResponse) o;
-        return Objects.equals(id, that.id) && Objects.equals(Status, that.Status) && Objects.equals(tx_ref, that.tx_ref) && Objects.equals(transaction_id, that.transaction_id);
+        return Objects.equals(id, that.id) && Objects.equals(Status, that.Status) && Objects.equals(tx_ref, that.tx_ref)
+                && Objects.equals(transaction_id, that.transaction_id);
     }
 
     @Override
 
-/**
- *
- * Hash code
- *
- * @return int
- */
+    /**
+     *
+     * Hash code
+     *
+     * @return int
+     */
     public int hashCode() {
 
         return Objects.hash(id, Status, tx_ref, transaction_id);
     }
-
 
     /**
      * Gets the tx_ref
@@ -119,7 +117,6 @@ public class FlutterwaveResponse implements Serializable {
         return tx_ref;
     }
 
-
     /**
      * Sets the tx_ref
      *
@@ -130,7 +127,6 @@ public class FlutterwaveResponse implements Serializable {
         this.tx_ref = tx_ref;
     }
 
-
     /**
      * Gets the transaction_id
      *
@@ -140,7 +136,6 @@ public class FlutterwaveResponse implements Serializable {
 
         return transaction_id;
     }
-
 
     /**
      * Sets the transaction_id

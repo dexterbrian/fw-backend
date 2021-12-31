@@ -1,6 +1,5 @@
 package com.mctv.flutterwave.models;
 
-
 /**
  * The class User. Model class for User.
  */
@@ -8,7 +7,6 @@ public class User {
     private String id;
     private String phone;
     private String fullname;
-
 
     /**
      * Gets the identifier
@@ -20,7 +18,6 @@ public class User {
         return id;
     }
 
-
     /**
      * Sets the identifier
      *
@@ -30,7 +27,6 @@ public class User {
 
         this.id = id;
     }
-
 
     /**
      * Gets the phone
@@ -42,7 +38,6 @@ public class User {
         return phone;
     }
 
-
     /**
      * Sets the phone
      *
@@ -53,7 +48,6 @@ public class User {
         this.phone = phone;
     }
 
-
     /**
      * Gets the fullname
      *
@@ -63,7 +57,6 @@ public class User {
 
         return fullname;
     }
-
 
     /**
      * Sets the fullname

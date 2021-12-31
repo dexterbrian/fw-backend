@@ -1,6 +1,5 @@
 package com.mctv.flutterwave.models;
 
-
 /**
  * The class Content
  */
@@ -34,14 +33,12 @@ public class Content {
     private String estDiscount;
     private String pvodDiscount;
 
-
     /**
      * It is a constructor.
      */
     public Content() {
 
     }
-
 
     /**
      * Gets the ref
@@ -53,7 +50,6 @@ public class Content {
         return ref;
     }
 
-
     /**
      * Sets the ref
      *
@@ -63,7 +59,6 @@ public class Content {
 
         this.ref = ref;
     }
-
 
     /**
      * Gets the type
@@ -75,7 +70,6 @@ public class Content {
         return type;
     }
 
-
     /**
      * Sets the type
      *
@@ -85,7 +79,6 @@ public class Content {
 
         this.type = type;
     }
-
 
     /**
      * Gets the title
@@ -97,7 +90,6 @@ public class Content {
         return title;
     }
 
-
     /**
      * Sets the title
      *
@@ -107,7 +99,6 @@ public class Content {
 
         this.title = title;
     }
-
 
     /**
      * Gets the synopsis
@@ -119,7 +110,6 @@ public class Content {
         return synopsis;
     }
 
-
     /**
      * Sets the synopsis
      *
@@ -129,7 +119,6 @@ public class Content {
 
         this.synopsis = synopsis;
     }
-
 
     /**
      * Gets the duration
@@ -141,7 +130,6 @@ public class Content {
         return duration;
     }
 
-
     /**
      * Sets the duration
      *
@@ -151,7 +139,6 @@ public class Content {
 
         this.duration = duration;
     }
-
 
     /**
      * Gets the year
@@ -163,7 +150,6 @@ public class Content {
         return year;
     }
 
-
     /**
      * Sets the year
      *
@@ -173,7 +159,6 @@ public class Content {
 
         this.year = year;
     }
-
 
     /**
      * Gets the premier date
@@ -185,7 +170,6 @@ public class Content {
         return premierDate;
     }
 
-
     /**
      * Sets the premier date
      *
@@ -195,7 +179,6 @@ public class Content {
 
         this.premierDate = premierDate;
     }
-
 
     /**
      * Gets the trailer_url
@@ -207,7 +190,6 @@ public class Content {
         return trailer_url;
     }
 
-
     /**
      * Sets the trailer_url
      *
@@ -217,7 +199,6 @@ public class Content {
 
         this.trailer_url = trailer_url;
     }
-
 
     /**
      * Gets the rating
@@ -229,7 +210,6 @@ public class Content {
         return rating;
     }
 
-
     /**
      * Sets the rating
      *
@@ -239,7 +219,6 @@ public class Content {
 
         this.rating = rating;
     }
-
 
     /**
      * Gets the genres
@@ -251,7 +230,6 @@ public class Content {
         return genres;
     }
 
-
     /**
      * Sets the genres
      *
@@ -261,7 +239,6 @@ public class Content {
 
         this.genres = genres;
     }
-
 
     /**
      * Gets the countries
@@ -273,7 +250,6 @@ public class Content {
         return countries;
     }
 
-
     /**
      * Sets the countries
      *
@@ -283,7 +259,6 @@ public class Content {
 
         this.countries = countries;
     }
-
 
     /**
      * Gets the language
@@ -295,7 +270,6 @@ public class Content {
         return language;
     }
 
-
     /**
      * Sets the language
      *
@@ -305,7 +279,6 @@ public class Content {
 
         this.language = language;
     }
-
 
     /**
      * Gets the tags
@@ -317,7 +290,6 @@ public class Content {
         return tags;
     }
 
-
     /**
      * Sets the tags
      *
@@ -327,7 +299,6 @@ public class Content {
 
         this.tags = tags;
     }
-
 
     /**
      * Gets the est
@@ -339,7 +310,6 @@ public class Content {
         return est;
     }
 
-
     /**
      * Sets the est
      *
@@ -349,7 +319,6 @@ public class Content {
 
         this.est = est;
     }
-
 
     /**
      * Gets the rental
@@ -361,7 +330,6 @@ public class Content {
         return rental;
     }
 
-
     /**
      * Sets the rental
      *
@@ -371,7 +339,6 @@ public class Content {
 
         this.rental = rental;
     }
-
 
     /**
      * Gets the pvod
@@ -383,7 +350,6 @@ public class Content {
         return pvod;
     }
 
-
     /**
      * Sets the pvod
      *
@@ -393,7 +359,6 @@ public class Content {
 
         this.pvod = pvod;
     }
-
 
     /**
      * Gets the is discount active
@@ -405,7 +370,6 @@ public class Content {
         return isDiscountActive;
     }
 
-
     /**
      * Sets the is discount active
      *
@@ -415,7 +379,6 @@ public class Content {
 
         this.isDiscountActive = isDiscountActive;
     }
-
 
     /**
      * Gets the downloadable
@@ -427,7 +390,6 @@ public class Content {
         return downloadable;
     }
 
-
     /**
      * Sets the downloadable
      *
@@ -437,7 +399,6 @@ public class Content {
 
         this.downloadable = downloadable;
     }
-
 
     /**
      * Gets the dubbing
@@ -449,7 +410,6 @@ public class Content {
         return dubbing;
     }
 
-
     /**
      * Sets the dubbing
      *
@@ -459,7 +419,6 @@ public class Content {
 
         this.dubbing = dubbing;
     }
-
 
     /**
      * Gets the classification
@@ -471,7 +430,6 @@ public class Content {
         return classification;
     }
 
-
     /**
      * Sets the classification
      *
@@ -481,7 +439,6 @@ public class Content {
 
         this.classification = classification;
     }
-
 
     /**
      * Gets the currency
@@ -493,7 +450,6 @@ public class Content {
         return currency;
     }
 
-
     /**
      * Sets the currency
      *
@@ -503,7 +459,6 @@ public class Content {
 
         this.currency = currency;
     }
-
 
     /**
      * Gets the est_price
@@ -515,7 +470,6 @@ public class Content {
         return est_price;
     }
 
-
     /**
      * Sets the est_price
      *
@@ -525,7 +479,6 @@ public class Content {
 
         this.est_price = est_price;
     }
-
 
     /**
      * Gets the rental_price
@@ -537,7 +490,6 @@ public class Content {
         return rental_price;
     }
 
-
     /**
      * Sets the rental_price
      *
@@ -547,7 +499,6 @@ public class Content {
 
         this.rental_price = rental_price;
     }
-
 
     /**
      * Gets the pvod_price
@@ -559,7 +510,6 @@ public class Content {
         return pvod_price;
     }
 
-
     /**
      * Sets the pvod_price
      *
@@ -569,7 +519,6 @@ public class Content {
 
         this.pvod_price = pvod_price;
     }
-
 
     /**
      * Gets the rental discount
@@ -581,7 +530,6 @@ public class Content {
         return rentalDiscount;
     }
 
-
     /**
      * Sets the rental discount
      *
@@ -591,7 +539,6 @@ public class Content {
 
         this.rentalDiscount = rentalDiscount;
     }
-
 
     /**
      * Gets the est discount
@@ -603,7 +550,6 @@ public class Content {
         return estDiscount;
     }
 
-
     /**
      * Sets the est discount
      *
@@ -613,7 +559,6 @@ public class Content {
 
         this.estDiscount = estDiscount;
     }
-
 
     /**
      * Gets the pvod discount
@@ -625,7 +570,6 @@ public class Content {
         return pvodDiscount;
     }
 
-
     /**
      * Sets the pvod discount
      *
@@ -636,26 +580,27 @@ public class Content {
         this.pvodDiscount = pvodDiscount;
     }
 
-
     /**
      * Gets the discounted price
      *
      * @param tx_type the tx_type
      * @return the discounted price
+     * 
+     * 
      */
     public String getDiscountedPrice(String tx_type) {
 
         float discount;
         float price = 0;
         if ("rental".equals(tx_type)) {
-            discount =  Integer.parseInt(this.getRentalDiscount());
-            price = Integer.parseInt(this.getRental_price())*(100-discount)/100;
+            discount = Float.parseFloat(this.getRentalDiscount());
+            price = Float.parseFloat(this.getRental_price()) * (100 - discount) / 100;
         } else if ("pvod".equals(tx_type)) {
-            discount = Integer.parseInt(this.getPvodDiscount());
-            price = Integer.parseInt(this.getPvod_price())*(100-discount)/100;
+            discount = Float.parseFloat(this.getPvodDiscount());
+            price = Float.parseFloat(this.getPvod_price()) * (100 - discount) / 100;
         } else if ("est".equals(tx_type)) {
-            discount =  Integer.parseInt(this.getEstDiscount());
-            price = Integer.parseInt(this.getEst_price())*(100-discount)/100;
+            discount = Float.parseFloat(this.getEstDiscount());
+            price = Float.parseFloat(this.getEst_price()) * (100 - discount) / 100;
         } else {
             return "0";
         }

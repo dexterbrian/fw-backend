@@ -2,15 +2,14 @@ package com.mctv.flutterwave.models;
 
 import com.google.gson.annotations.Expose;
 
-
 /**
  * This is the model class for Data
+ * 
  * @see Payload
  */
 public class Data {
     @Expose
     private String link;
-
 
     /**
      *
@@ -23,12 +22,11 @@ public class Data {
         return link;
     }
 
-
     /**
      *
      * Sets the link
      *
-     * @param link  the link
+     * @param link the link
      */
     public void setLink(String link) {
 

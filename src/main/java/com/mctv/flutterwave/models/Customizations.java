@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 
 import java.io.Serializable;
 
-
 /**
  * The class Customizations implements serializable
  *
@@ -17,7 +16,6 @@ public class Customizations implements Serializable {
     private String description;
     @Expose
     private String logo;
-
 
     /**
      * Customizations
@@ -35,7 +33,7 @@ public class Customizations implements Serializable {
         this.logo = logo;
     }
 
-    //generate getters and setters
+    // generate getters and setters
 
     /**
      * Gets the title
@@ -47,7 +45,6 @@ public class Customizations implements Serializable {
         return title;
     }
 
-
     /**
      * Sets the title
      *
@@ -57,7 +54,6 @@ public class Customizations implements Serializable {
 
         this.title = title;
     }
-
 
     /**
      * Gets the description
@@ -69,7 +65,6 @@ public class Customizations implements Serializable {
         return description;
     }
 
-
     /**
      * Sets the description
      *
@@ -80,7 +75,6 @@ public class Customizations implements Serializable {
         this.description = description;
     }
 
-
     /**
      * Gets the logo url
      *
@@ -90,7 +84,6 @@ public class Customizations implements Serializable {
 
         return logo;
     }
-
 
     /**
      * Sets the logo url

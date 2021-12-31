@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Brian Weloba
  * @author Hamisi Andale
  *
- * This is the interface for the ApiService.
+ *         This is the interface for the ApiService.
  */
 public interface ApiService {
 
@@ -19,25 +19,23 @@ public interface ApiService {
      * @param contentRef The content reference.
      * @return The requested content.
      *
-     * This method returns the content for the given content reference.
+     *         This method returns the content for the given content reference.
      */
-    @PostMapping(path = "api/v1/content",
-            consumes = {"application/json",
-            "multipart/form-data"})
+    @PostMapping(path = "api/v1/content", consumes = { "application/json",
+            "multipart/form-data" })
     @ResponseBody // inside response
-    //@ResponeParam ...?email=value
-    //@PatrhVariable .../{variable}
+    // @ResponeParam ...?email=value
+    // @PatrhVariable .../{variable}
     Content getContentByRef(@RequestParam String is_updated, @RequestParam("ref") String contentRef);
 
     /**
      * @param email The user's email.
      * @return The requested user.
      */
-    @PostMapping(path="api/v1/users/customerid",
-    consumes = {"multipart/form-data"})
+    @PostMapping(path = "api/v1/users/customerid", consumes = { "multipart/form-data" })
     @ResponseBody
     User getUsersByEmail(@RequestPart String email);
 
-    //todo:add endpoint to make a purchase
-    
+    // todo:add endpoint to make a purchase
+
 }

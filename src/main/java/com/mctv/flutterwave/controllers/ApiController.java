@@ -42,11 +42,15 @@ public class ApiController implements ApiService {
     }
 
     /**
-     * @param email           The current user's email address used to fetch the user's
+     * @param email           The current user's email address used to fetch the
+     *                        user's
      *                        details
      * @param ref             The content's reference used to fetch the content's
      *                        details
      * @param transactionType The transaction type used to fetch the payment details
+     *                        i.e EST, PVOD, or RENTAL
+     * @param currency        The currency used to make the payment
+     * 
      * @return The rave model payment view for the flutterwave payment
      *         <p>
      *         This method is responsible for handling fetching the payment and user
@@ -54,7 +58,7 @@ public class ApiController implements ApiService {
      */
     @GetMapping(path = "/pay")
     public ModelAndView getPaymentDetails(@RequestParam String email, @RequestParam String ref,
-            @RequestParam(required = false) String transactionType, @RequestParam String currency) {
+            @RequestParam String transactionType, @RequestParam String currency) {
         // Get the user details and the content details from the backend
         Content content = getContentByRef("true", ref);
         User user = apiServiceProxy.getUsersByEmail(email);

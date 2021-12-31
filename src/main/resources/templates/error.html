@@ -4,8 +4,11 @@
 <head>
     <title>Payment Error</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200;300;400;600&family=Pacifico&family=Signika+Negative:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@200;300;400;600&family=Pacifico&family=Signika+Negative:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lora:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -18,7 +21,8 @@
         </div>
         <div class="body_container">
             <div class="message">
-                <p th:text="'Error: '+${message}">Your payment has been cancelled and you will not be charged. </br>If you wish to retry press the retry button.</p>
+                <p th:text="'Error: '+${message}">Your payment has been cancelled and you will not be charged. </br>If
+                    you wish to retry press the retry button.</p>
             </div>
 
             <div class="image">
@@ -52,13 +56,13 @@
 
 <script th:inline="javascript">
     var ref = [
-        [${tx_ref}]
+        [${ tx_ref }]
     ];
     var url = [
-        [${url}]
+        [${ url }]
     ];
     var button = document.getElementById('retry');
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         window.location.href = url + '/retry-payment?ref=' + ref;
     });
 </script>

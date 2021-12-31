@@ -1,6 +1,5 @@
 package com.mctv.flutterwave.models;
 
-
 /**
  * The class Response. Model class for the response object.
  */
@@ -8,7 +7,6 @@ public class Response {
     private String status;
     private String message;
     private Data data;
-
 
     /**
      * Gets the status
@@ -20,7 +18,6 @@ public class Response {
         return status;
     }
 
-
     /**
      * Sets the status
      *
@@ -30,7 +27,6 @@ public class Response {
 
         this.status = status;
     }
-
 
     /**
      * Gets the message
@@ -42,7 +38,6 @@ public class Response {
         return message;
     }
 
-
     /**
      * Sets the message
      *
@@ -53,7 +48,6 @@ public class Response {
         this.message = message;
     }
 
-
     /**
      * Gets the data
      *
@@ -63,7 +57,6 @@ public class Response {
 
         return data;
     }
-
 
     /**
      * Sets the data

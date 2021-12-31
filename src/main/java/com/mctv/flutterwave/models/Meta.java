@@ -4,15 +4,14 @@ import com.google.gson.annotations.Expose;
 
 import java.io.Serializable;
 
-
 /**
  * The class Meta implements serializable
+ * 
  * @see Payload
  */
 public class Meta implements Serializable {
     @Expose
     String contentRef;
-
 
     /**
      * Gets the content ref
@@ -23,7 +22,6 @@ public class Meta implements Serializable {
 
         return contentRef;
     }
-
 
     /**
      * Sets the content ref

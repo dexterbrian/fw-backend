@@ -6,7 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.UUID;
 
 /**
- * The interface Payload repository. Creates a persistence layer for the Payload model.
+ * The interface Payload repository. Creates a persistence layer for the Payload
+ * model.
  */
 public interface PayloadRepository extends CrudRepository<Payload, UUID> {
     /**

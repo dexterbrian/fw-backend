@@ -4,9 +4,9 @@ import com.google.gson.annotations.Expose;
 
 import java.io.Serializable;
 
-
 /**
  * The class Customer implements serializable
+ * 
  * @see Payload
  */
 public class Customer implements Serializable {
@@ -16,7 +16,6 @@ public class Customer implements Serializable {
     private String email;
     @Expose
     private String phone_number;
-
 
     /**
      * Gets the name
@@ -28,7 +27,6 @@ public class Customer implements Serializable {
         return name;
     }
 
-
     /**
      * Sets the name
      *
@@ -38,7 +36,6 @@ public class Customer implements Serializable {
 
         this.name = name;
     }
-
 
     /**
      * Gets the email
@@ -50,7 +47,6 @@ public class Customer implements Serializable {
         return email;
     }
 
-
     /**
      * Sets the email
      *
@@ -60,7 +56,6 @@ public class Customer implements Serializable {
 
         this.email = email;
     }
-
 
     /**
      * Gets the phone_number
@@ -72,7 +67,6 @@ public class Customer implements Serializable {
         return phone_number;
     }
 
-
     /**
      * Sets the phone_number
      *
@@ -83,4 +77,3 @@ public class Customer implements Serializable {
         this.phone_number = phone_number;
     }
 }
-

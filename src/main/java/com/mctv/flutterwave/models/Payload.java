@@ -17,7 +17,8 @@ import java.util.UUID;
 @Entity
 
 /**
- * The class Payload implements serializable. This class models a payload for the transaction.
+ * The class Payload implements serializable. This class models a payload for
+ * the transaction.
  */
 public class Payload implements Serializable {
     @Id
@@ -38,8 +39,8 @@ public class Payload implements Serializable {
     private String description;
     @Expose
     private String payment_options;
-    //    @Expose
-//    private String public_key;
+    // @Expose
+    // private String public_key;
     private transient String tx_ref;
     @Expose
     private String ref;
@@ -61,38 +62,48 @@ public class Payload implements Serializable {
         this.time = formattedDateTime;
         this.tx_ref = UUID.randomUUID().toString();
         this.ref = tx_ref;
-        Customizations custom = new Customizations("MyMoviesAfrica", "Bring Cinema Home!", "https://mymovies.africa/static/media/mma-logo.885180a6.png");
+        Customizations custom = new Customizations("MyMoviesAfrica", "Bring Cinema Home!",
+                "https://mymovies.africa/static/media/mma-logo.885180a6.png");
         this.customizations = custom;
     }
 
     @Override
 
-/**
- *
- * Equals
- *
- * @param o  the o
- * @return boolean
- */
+    /**
+     *
+     * Equals
+     *
+     * @param o the o
+     * @return boolean
+     */
     public boolean equals(Object o) {
 
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Payload payload = (Payload) o;
-        return Objects.equals(id, payload.id) && Objects.equals(time, payload.time) && Objects.equals(customer, payload.customer) && Objects.equals(amount, payload.amount) && Objects.equals(currency, payload.currency) && Objects.equals(country, payload.country) && Objects.equals(description, payload.description) && Objects.equals(payment_options, payload.payment_options) && Objects.equals(tx_ref, payload.tx_ref) && Objects.equals(ref, payload.ref) && Objects.equals(redirect_url, payload.redirect_url) && Objects.equals(meta, payload.meta) && Objects.equals(customizations, payload.customizations);
+        return Objects.equals(id, payload.id) && Objects.equals(time, payload.time)
+                && Objects.equals(customer, payload.customer) && Objects.equals(amount, payload.amount)
+                && Objects.equals(currency, payload.currency) && Objects.equals(country, payload.country)
+                && Objects.equals(description, payload.description)
+                && Objects.equals(payment_options, payload.payment_options) && Objects.equals(tx_ref, payload.tx_ref)
+                && Objects.equals(ref, payload.ref) && Objects.equals(redirect_url, payload.redirect_url)
+                && Objects.equals(meta, payload.meta) && Objects.equals(customizations, payload.customizations);
     }
 
     @Override
 
-/**
- *
- * Hash code
- *
- * @return int
- */
+    /**
+     *
+     * Hash code
+     *
+     * @return int
+     */
     public int hashCode() {
 
-        return Objects.hash(id, time, customer, amount, currency, country, description, payment_options, tx_ref, ref, redirect_url, meta, customizations);
+        return Objects.hash(id, time, customer, amount, currency, country, description, payment_options, tx_ref, ref,
+                redirect_url, meta, customizations);
     }
 
     /**
@@ -105,7 +116,6 @@ public class Payload implements Serializable {
         return meta;
     }
 
-
     /**
      * Sets the meta
      *
@@ -115,7 +125,6 @@ public class Payload implements Serializable {
 
         this.meta = meta;
     }
-
 
     /**
      * Gets the identifier
@@ -127,7 +136,6 @@ public class Payload implements Serializable {
         return id;
     }
 
-
     /**
      * Sets the identifier
      *
@@ -137,7 +145,6 @@ public class Payload implements Serializable {
 
         this.id = id;
     }
-
 
     /**
      * Gets the payment_options
@@ -149,7 +156,6 @@ public class Payload implements Serializable {
         return payment_options;
     }
 
-
     /**
      * Sets the payment_options
      *
@@ -159,7 +165,6 @@ public class Payload implements Serializable {
 
         this.payment_options = payment_options;
     }
-
 
     /**
      * Gets the customizations
@@ -171,7 +176,6 @@ public class Payload implements Serializable {
         return customizations;
     }
 
-
     /**
      * Sets the customizations
      *
@@ -181,7 +185,6 @@ public class Payload implements Serializable {
 
         this.customizations = customizations;
     }
-
 
     /**
      * Gets the customer
@@ -193,7 +196,6 @@ public class Payload implements Serializable {
         return customer;
     }
 
-
     /**
      * Sets the customer
      *
@@ -203,7 +205,6 @@ public class Payload implements Serializable {
 
         this.customer = customer;
     }
-
 
     /**
      * Gets the amount
@@ -215,7 +216,6 @@ public class Payload implements Serializable {
         return amount;
     }
 
-
     /**
      * Sets the amount
      *
@@ -225,7 +225,6 @@ public class Payload implements Serializable {
 
         this.amount = amount;
     }
-
 
     /**
      * Gets the currency
@@ -237,7 +236,6 @@ public class Payload implements Serializable {
         return currency;
     }
 
-
     /**
      * Sets the currency
      *
@@ -247,7 +245,6 @@ public class Payload implements Serializable {
 
         this.currency = currency;
     }
-
 
     /**
      * Gets the country
@@ -259,7 +256,6 @@ public class Payload implements Serializable {
         return country;
     }
 
-
     /**
      * Sets the country
      *
@@ -269,7 +265,6 @@ public class Payload implements Serializable {
 
         this.country = country;
     }
-
 
     /**
      * Gets the description
@@ -281,7 +276,6 @@ public class Payload implements Serializable {
         return description;
     }
 
-
     /**
      * Sets the description
      *
@@ -292,14 +286,13 @@ public class Payload implements Serializable {
         this.description = description;
     }
 
-//    public String getPublic_key() {
-//        return public_key;
-//    }
-//
-//    public void setPublic_key(String public_key) {
-//        this.public_key = public_key;
-//    }
-
+    // public String getPublic_key() {
+    // return public_key;
+    // }
+    //
+    // public void setPublic_key(String public_key) {
+    // this.public_key = public_key;
+    // }
 
     /**
      * Gets the tx_ref
@@ -311,7 +304,6 @@ public class Payload implements Serializable {
         return tx_ref;
     }
 
-
     /**
      * Sets the tx_ref
      *
@@ -322,7 +314,6 @@ public class Payload implements Serializable {
         this.tx_ref = tx_ref;
     }
 
-
     /**
      * Gets the redirect_url
      *
@@ -332,7 +323,6 @@ public class Payload implements Serializable {
 
         return redirect_url;
     }
-
 
     /**
      * Sets the redirect_url
@@ -346,12 +336,12 @@ public class Payload implements Serializable {
 
     @Override
 
-/**
- *
- * To string
- *
- * @return String
- */
+    /**
+     *
+     * To string
+     *
+     * @return String
+     */
     public String toString() {
 
         Gson gson = new GsonBuilder()
@@ -359,7 +349,6 @@ public class Payload implements Serializable {
                 .create();
         return gson.toJson(this);
     }
-
 
     /**
      * Gets the ref
@@ -371,7 +360,6 @@ public class Payload implements Serializable {
         return ref;
     }
 
-
     /**
      * Sets the ref
      *
@@ -382,7 +370,6 @@ public class Payload implements Serializable {
         this.ref = ref;
     }
 
-
     /**
      * Gets the time
      *
@@ -392,7 +379,6 @@ public class Payload implements Serializable {
 
         return time;
     }
-
 
     /**
      * Sets the time

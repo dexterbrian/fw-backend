@@ -20,8 +20,9 @@ public class GlobalExceptionHandler {
      * @param e        Feign exception
      * @param response HttpServletResponse
      * @return returns the error page view with the specified error message
-     * <p>
-     * This method handles all bad request(400) exceptions thrown by the confirmation controller.
+     *         <p>
+     *         This method handles all bad request(400) exceptions thrown by the
+     *         confirmation controller.
      */
     @ExceptionHandler(FeignException.BadRequest.class)
     public ModelAndView handleFeignException(FeignException e, HttpServletResponse response) {
@@ -29,14 +30,14 @@ public class GlobalExceptionHandler {
         String status;
         String message;
         JSONObject res = new JSONObject(e.contentUTF8());
-        if(res.getString("status").isEmpty()){
+        if (res.getString("status").isEmpty()) {
             status = "unspecified error";
-        }else{
+        } else {
             status = res.getString("status");
         }
-        if(res.getString("message").isEmpty()){
+        if (res.getString("message").isEmpty()) {
             message = "unspecified message";
-        }else{
+        } else {
             message = res.getString("message");
         }
 

@@ -1,6 +1,5 @@
 package com.mctv.flutterwave.utils;
 
-
 /**
  * A class to hold all the URLs used in the application.
  */

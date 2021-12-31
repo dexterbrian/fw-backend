@@ -13,7 +13,7 @@ public interface FrontendService {
      *            This method returns the view of the content on mma-frontend
      */
 
-    //todo: update the ownership status on the frontend
+    // todo: update the ownership status on the frontend
     @PostMapping("views/{ref}")
     public void view(@PathVariable String ref);
 }

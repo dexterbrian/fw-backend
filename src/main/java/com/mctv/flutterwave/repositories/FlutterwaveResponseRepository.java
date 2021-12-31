@@ -5,7 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.UUID;
 
 /**
- * The interface Flutterwave response repository. Creates a persistence layer for the FlutterwaveResponse model.
+ * The interface Flutterwave response repository. Creates a persistence layer
+ * for the FlutterwaveResponse model.
  */
 public interface FlutterwaveResponseRepository extends CrudRepository<FlutterwaveResponse, UUID> {
 }

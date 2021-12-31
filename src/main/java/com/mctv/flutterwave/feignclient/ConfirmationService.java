@@ -14,9 +14,9 @@ public interface ConfirmationService {
      * @param id The id of the transaction to be confirmed
      * @return A map containing the transaction details
      *
-     * This method confirms a transaction by id
+     *         This method confirms a transaction by id
      */
     @GetMapping("{id}/verify")
     @ResponseBody
-    Map<String,Object> verify(@PathVariable String id);
+    Map<String, Object> verify(@PathVariable String id);
 }
