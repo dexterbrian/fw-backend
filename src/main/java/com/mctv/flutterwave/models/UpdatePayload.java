@@ -1,21 +1,19 @@
 package com.mctv.flutterwave.models;
 
-import java.util.UUID;
+import com.google.gson.annotations.Expose;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import com.google.gson.annotations.Expose;
+import java.util.UUID;
 
 /**
  * @author Brian Weloba
  * @author Hamisi Andale
- * 
- *         1. This class is the model for the update payload.
- *         2. It is responsible for holding the update payload details.
- * 
+ * <p>
+ * 1. This class is the model for the update payload.
+ * 2. It is responsible for holding the update payload details.
  */
 @Entity
 public class UpdatePayload {
@@ -38,9 +36,8 @@ public class UpdatePayload {
     // private String transactioncode;
 
     /**
-     * Gets the identifier
-     * 
-     * @return the identifier
+     * Updates the payload
+     *
      */
     public UpdatePayload() {
         this.id = UUID.randomUUID();
@@ -48,7 +45,7 @@ public class UpdatePayload {
 
     /**
      * Gets the identifier
-     * 
+     *
      * @return the id of the update payload
      */
     public UUID getId() {
@@ -57,7 +54,7 @@ public class UpdatePayload {
 
     /**
      * Sets the identifier
-     * 
+     *
      * @param id the id of the update payload
      */
     public void setId(UUID id) {
@@ -66,7 +63,7 @@ public class UpdatePayload {
 
     /**
      * Gets the user_id
-     * 
+     *
      * @return the user_id
      */
     public String getUser_id() {
@@ -75,7 +72,7 @@ public class UpdatePayload {
 
     /**
      * Sets the user_id
-     * 
+     *
      * @param user_id the user_id
      */
     public void setUser_id(String user_id) {
@@ -84,7 +81,7 @@ public class UpdatePayload {
 
     /**
      * Gets the purchase_type
-     * 
+     *
      * @return the purchase_type
      */
     public String getPurchase_type() {
@@ -93,7 +90,7 @@ public class UpdatePayload {
 
     /**
      * Sets the purchase_type
-     * 
+     *
      * @param purchase_type the purchase_type
      */
     public void setPurchase_type(String purchase_type) {
@@ -102,7 +99,7 @@ public class UpdatePayload {
 
     /**
      * Gets the ref
-     * 
+     *
      * @return the ref
      */
     public String getRef() {
@@ -111,7 +108,7 @@ public class UpdatePayload {
 
     /**
      * Sets the ref
-     * 
+     *
      * @param ref the ref
      */
     public void setRef(String ref) {
@@ -120,7 +117,7 @@ public class UpdatePayload {
 
     /**
      * Gets the tx
-     * 
+     *
      * @return the tx
      */
     public String getCurrency() {
@@ -128,9 +125,9 @@ public class UpdatePayload {
     }
 
     /**
-     * Sets the tx
-     * 
-     * @param tx the tx
+     * Sets the currency
+     *
+     * @param currency the currency
      */
     public void setCurrency(String currency) {
         this.currency = currency;
@@ -138,7 +135,7 @@ public class UpdatePayload {
 
     /**
      * Gets the tx
-     * 
+     *
      * @return the tx
      */
     public String getTx() {
@@ -147,7 +144,7 @@ public class UpdatePayload {
 
     /**
      * Sets the tx
-     * 
+     *
      * @param tx the tx
      */
     public void setTx(String tx) {

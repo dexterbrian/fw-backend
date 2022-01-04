@@ -585,13 +585,11 @@ public class Content {
      *
      * @param tx_type the tx_type
      * @return the discounted price
-     * 
-     * 
      */
     public String getDiscountedPrice(String tx_type) {
 
         float discount;
-        float price = 0;
+        float price;
         if ("rental".equals(tx_type)) {
             discount = Float.parseFloat(this.getRentalDiscount());
             price = Float.parseFloat(this.getRental_price()) * (100 - discount) / 100;

@@ -3,10 +3,9 @@ package com.mctv.flutterwave.models;
 /**
  * @author Brian Weloba
  * @author Hamisi Andale
- * 
- *         1. This class is the model for the response from the backend when you
- *         update a payment.
- * 
+ * <p>
+ * 1. This class is the model for the response from the backend when you
+ * update a payment.
  */
 public class BackendResponse {
     private String message;
@@ -14,7 +13,7 @@ public class BackendResponse {
 
     /**
      * Gets the message
-     * 
+     *
      * @return the message
      */
     public String getMessage() {
@@ -23,9 +22,8 @@ public class BackendResponse {
 
     /**
      * Sets the message
-     * 
-     * @param message
-     *                the message to set
+     *
+     * @param message the message to set
      */
     public void setMessage(String message) {
         this.message = message;
@@ -33,7 +31,7 @@ public class BackendResponse {
 
     /**
      * Gets the Purchase
-     * 
+     *
      * @return the Purchase
      */
     public Purchase getPurchase() {
@@ -42,9 +40,8 @@ public class BackendResponse {
 
     /**
      * Sets the Purchase
-     * 
-     * @param Purchase
-     *                 the Purchase to set
+     *
+     * @param purchase the Purchase to set
      */
     public void setPurchase(Purchase purchase) {
         Purchase = purchase;

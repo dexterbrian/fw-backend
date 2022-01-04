@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * The class Meta implements serializable
- * 
+ *
  * @see Payload
  */
 public class Meta implements Serializable {

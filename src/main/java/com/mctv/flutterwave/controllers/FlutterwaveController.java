@@ -6,7 +6,6 @@ import com.mctv.flutterwave.models.*;
 import com.mctv.flutterwave.repositories.FlutterwaveResponseRepository;
 import com.mctv.flutterwave.repositories.PayloadRepository;
 import com.mctv.flutterwave.repositories.UpdatePayloadRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Objects;
+
 import static com.mctv.flutterwave.utils.URLs.MICROSERVICE_URL;
 
 /**
  * @author Brian Weloba
  * @author Hamisi Andale
- *         <p>
- *         Controller for the Flutterwave payment microservice.Used to handle
- *         the payment flow.
+ * <p>
+ * Controller for the Flutterwave payment microservice.Used to handle
+ * the payment flow.
  */
 @RestController
 @RequestMapping("/flutterwave")
@@ -43,7 +44,7 @@ public class FlutterwaveController implements FlutterwaveService {
      */
     @Autowired
     public FlutterwaveController(FlutterwaveServiceProxy proxy, PayloadRepository repo,
-            FlutterwaveResponseRepository fwRepo, UpdatePayloadRepository pRepo) {
+                                 FlutterwaveResponseRepository fwRepo, UpdatePayloadRepository pRepo) {
         this.proxy = proxy;
         this.repo = repo;
         this.fwRepo = fwRepo;
@@ -55,9 +56,9 @@ public class FlutterwaveController implements FlutterwaveService {
      * @param customer        Customer object
      * @param transactionType String transaction type
      * @return A view to the rave payment page
-     *         <p>
-     *         This method is used to initiate the payment process by redirecting
-     *         the user to the rave payment page
+     * <p>
+     * This method is used to initiate the payment process by redirecting
+     * the user to the rave payment page
      */
     @GetMapping("/payment")
     public ModelAndView payment(Content content, Customer customer, String transactionType, UpdatePayload uPayload) {
@@ -78,14 +79,14 @@ public class FlutterwaveController implements FlutterwaveService {
      * @param tx_ref         The transaction reference of the payment
      * @param transaction_id The transaction id of the payment
      * @return On successful payment, the user is redirected to the payment success
-     *         page or, on failed payment, the user is redirected to the error page
-     *         <p>
-     *         This method is used to handle the callback to the payment
-     *         microservice
+     * page or, on failed payment, the user is redirected to the error page
+     * <p>
+     * This method is used to handle the callback to the payment
+     * microservice
      */
     @GetMapping(path = "/callback")
     public ModelAndView paymentCallback(@RequestParam String status, @RequestParam String tx_ref,
-            @RequestParam(required = false) String transaction_id) {
+                                        @RequestParam(required = false) String transaction_id) {
         // get transaction details from database
         System.out.println("ref: " + tx_ref);
         // Payload payload = repo.findByRef(tx_ref);
@@ -153,7 +154,7 @@ public class FlutterwaveController implements FlutterwaveService {
      *                       payment
      */
     private void saveResponse(@RequestParam String status, @RequestParam String tx_ref,
-            @RequestParam String transaction_id) {
+                              @RequestParam String transaction_id) {
         FlutterwaveResponse response = new FlutterwaveResponse();
         response.setStatus(status);
         response.setTx_ref(tx_ref);
@@ -164,8 +165,8 @@ public class FlutterwaveController implements FlutterwaveService {
     /**
      * @param payload The payload of the payment
      * @return The response from flutterwave payment api.
-     *         <p>
-     *         This method is used to initilaize a payment on flutterwave.
+     * <p>
+     * This method is used to initilaize a payment on flutterwave.
      */
     @Override
     public Response createPayment(Payload payload) {
@@ -177,14 +178,14 @@ public class FlutterwaveController implements FlutterwaveService {
      * @param customer        An instance of the customer class
      * @param transactionType The type of transaction
      * @return A payload object used to pass payment details to flutterwave
-     *         <p>
-     *         This method is used to create the payload object
+     * <p>
+     * This method is used to create the payload object
      */
     private Payload getPayload(Content content, Customer customer, String transactionType) {
         Payload payload = new Payload();
         // if est or rental or pvod
         if (content.getIsDiscountActive().equals("1")) {
-            if (content.getDiscountedPrice(transactionType) != "0") {
+            if (!Objects.equals(content.getDiscountedPrice(transactionType), "0")) {
                 payload.setAmount(content.getDiscountedPrice(transactionType));
             }
         } else {

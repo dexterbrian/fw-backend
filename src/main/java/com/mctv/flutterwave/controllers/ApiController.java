@@ -7,22 +7,18 @@ import com.mctv.flutterwave.models.Customer;
 import com.mctv.flutterwave.models.UpdatePayload;
 import com.mctv.flutterwave.models.User;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author Brian Weloba
  * @author Hamisi Andale
- *         <p>
- *         1. This class is the controller for the API.
- *         2. It is responsible for handling all the requests from the front
- *         end.
- *         3. It is also responsible for handling all the requests from the
- *         backend.
+ * <p>
+ * 1. This class is the controller for the API.
+ * 2. It is responsible for handling all the requests from the front
+ * end.
+ * 3. It is also responsible for handling all the requests from the
+ * backend.
  */
 @RestController
 @RequestMapping("/data")
@@ -50,15 +46,14 @@ public class ApiController implements ApiService {
      * @param transactionType The transaction type used to fetch the payment details
      *                        i.e EST, PVOD, or RENTAL
      * @param currency        The currency used to make the payment
-     * 
      * @return The rave model payment view for the flutterwave payment
-     *         <p>
-     *         This method is responsible for handling fetching the payment and user
-     *         details from the backend.
+     * <p>
+     * This method is responsible for handling fetching the payment and user
+     * details from the backend.
      */
     @GetMapping(path = "/pay")
     public ModelAndView getPaymentDetails(@RequestParam String email, @RequestParam String ref,
-            @RequestParam String transactionType, @RequestParam String currency) {
+                                          @RequestParam String transactionType, @RequestParam String currency) {
         // Get the user details and the content details from the backend
         Content content = getContentByRef("true", ref);
         User user = apiServiceProxy.getUsersByEmail(email);

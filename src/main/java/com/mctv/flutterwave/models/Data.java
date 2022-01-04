@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 
 /**
  * This is the model class for Data
- * 
+ *
  * @see Payload
  */
 public class Data {
@@ -12,7 +12,6 @@ public class Data {
     private String link;
 
     /**
-     *
      * Gets the link
      *
      * @return the link
@@ -23,7 +22,6 @@ public class Data {
     }
 
     /**
-     *
      * Sets the link
      *
      * @param link the link

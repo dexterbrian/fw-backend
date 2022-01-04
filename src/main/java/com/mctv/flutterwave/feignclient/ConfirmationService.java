@@ -13,8 +13,8 @@ public interface ConfirmationService {
     /**
      * @param id The id of the transaction to be confirmed
      * @return A map containing the transaction details
-     *
-     *         This method confirms a transaction by id
+     * <p>
+     * This method confirms a transaction by id
      */
     @GetMapping("{id}/verify")
     @ResponseBody

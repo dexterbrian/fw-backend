@@ -14,9 +14,9 @@ public interface FlutterwaveService {
     /**
      * @param payload The payload to be sent to the Flutterwave API
      * @return The response from the Flutterwave API
-     *
-     *         This method is used to send a request to the Flutterwave API that
-     *         initiates a transaction.
+     * <p>
+     * This method is used to send a request to the Flutterwave API that
+     * initiates a transaction.
      */
     @PostMapping("/payments")
     @ResponseBody

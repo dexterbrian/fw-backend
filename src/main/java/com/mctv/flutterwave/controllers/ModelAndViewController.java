@@ -16,8 +16,8 @@ import static com.mctv.flutterwave.utils.URLs.MICROSERVICE_URL;
 /**
  * @author Brian Weloba
  * @author Hamisi Andale
- *         <p>
- *         Controller for the ModelAndViewController
+ * <p>
+ * Controller for the ModelAndViewController
  */
 @Controller
 @EnableFeignClients(basePackageClasses = FlutterwaveServiceProxy.class)
@@ -42,13 +42,13 @@ public class ModelAndViewController {
      * @param tx_ref  The transaction reference of the payment
      * @param model   Spring framework model
      * @return The model and view for the payment error page
-     *         <p>
-     *         This method is used to display the payment error page
+     * <p>
+     * This method is used to display the payment error page
      */
-    @GetMapping(value = "/error", produces = { "text/html",
-            "application/json" })
+    @GetMapping(value = "/error", produces = {"text/html",
+            "application/json"})
     public String error(@RequestParam String status, @RequestParam String message,
-            @RequestParam(required = false) String tx_ref, Model model) {
+                        @RequestParam(required = false) String tx_ref, Model model) {
         model.addAttribute("tx_ref", tx_ref);
         model.addAttribute("status", status);
         model.addAttribute("message", message);
@@ -59,8 +59,8 @@ public class ModelAndViewController {
     /**
      * @param ref The reference of the payment
      * @return The model and view for the rave model to retry payment
-     *         <p>
-     *         This method is used to retry a payment
+     * <p>
+     * This method is used to retry a payment
      */
     @GetMapping("/retry-payment")
     public ModelAndView retryPayment(@RequestParam String ref) {

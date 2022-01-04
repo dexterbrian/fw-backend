@@ -3,10 +3,8 @@ package com.mctv.flutterwave.models;
 /**
  * @author Brian Weloba
  * @author Hamisi Andale
- * 
- *         1. This class is the model for the puchase payload.
- * 
- * 
+ * <p>
+ * 1. This class is the model for the puchase payload.
  */
 public class Purchase {
     private String id;
@@ -19,7 +17,7 @@ public class Purchase {
 
     /**
      * Gets the identifier
-     * 
+     *
      * @return the identifier
      */
     public String getId() {
@@ -28,9 +26,8 @@ public class Purchase {
 
     /**
      * Sets the identifier
-     * 
-     * @param id
-     *           the identifier to set
+     *
+     * @param id the identifier to set
      */
     public void setId(String id) {
         this.id = id;
@@ -38,7 +35,7 @@ public class Purchase {
 
     /**
      * Gets the amount
-     * 
+     *
      * @return the amount
      */
     public String getAmount() {
@@ -47,9 +44,8 @@ public class Purchase {
 
     /**
      * Sets the amount
-     * 
-     * @param amount
-     *               the amount to set
+     *
+     * @param amount the amount to set
      */
     public void setAmount(String amount) {
         this.amount = amount;
@@ -57,7 +53,7 @@ public class Purchase {
 
     /**
      * Gets the createdon
-     * 
+     *
      * @return the createdon
      */
     public String getCreatedon() {
@@ -66,9 +62,8 @@ public class Purchase {
 
     /**
      * Sets the createdon
-     * 
-     * @param createdon
-     *                  the createdon to set
+     *
+     * @param createdon the createdon to set
      */
     public void setCreatedon(String createdon) {
         this.createdon = createdon;
@@ -76,7 +71,7 @@ public class Purchase {
 
     /**
      * Gets the invoice_id
-     * 
+     *
      * @return the invoice_id
      */
     public String getInvoice_id() {
@@ -85,9 +80,8 @@ public class Purchase {
 
     /**
      * Sets the invoice_id
-     * 
-     * @param invoice_id
-     *                   the invoice_id to set
+     *
+     * @param invoice_id the invoice_id to set
      */
     public void setInvoice_id(String invoice_id) {
         this.invoice_id = invoice_id;
@@ -95,7 +89,7 @@ public class Purchase {
 
     /**
      * Gets the purchase_type
-     * 
+     *
      * @return the purchase_type
      */
     public String getPurchase_type() {
@@ -104,9 +98,8 @@ public class Purchase {
 
     /**
      * Sets the purchase_type
-     * 
-     * @param purchase_type
-     *                      the purchase_type to set
+     *
+     * @param purchase_type the purchase_type to set
      */
     public void setPurchase_type(String purchase_type) {
         this.purchase_type = purchase_type;
@@ -114,7 +107,7 @@ public class Purchase {
 
     /**
      * Gets the ref
-     * 
+     *
      * @return the ref
      */
     public String getRef() {
@@ -123,9 +116,8 @@ public class Purchase {
 
     /**
      * Sets the ref
-     * 
-     * @param ref
-     *            the ref to set
+     *
+     * @param ref the ref to set
      */
     public void setRef(String ref) {
         this.ref = ref;
@@ -133,7 +125,7 @@ public class Purchase {
 
     /**
      * Gets the title
-     * 
+     *
      * @return the title
      */
     public String getTitle() {
@@ -142,9 +134,8 @@ public class Purchase {
 
     /**
      * Sets the title
-     * 
-     * @param title
-     *              the title to set
+     *
+     * @param title the title to set
      */
     public void setTitle(String title) {
         this.title = title;

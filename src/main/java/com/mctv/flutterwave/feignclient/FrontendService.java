@@ -15,5 +15,5 @@ public interface FrontendService {
 
     // todo: update the ownership status on the frontend
     @PostMapping("views/{ref}")
-    public void view(@PathVariable String ref);
+    void view(@PathVariable String ref);
 }

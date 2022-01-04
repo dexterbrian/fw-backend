@@ -1,15 +1,10 @@
 package com.mctv.flutterwave.controllers;
 
-import static com.mctv.flutterwave.utils.URLs.MICROSERVICE_URL;
-
-import java.util.Map;
-
 import com.mctv.flutterwave.feignclient.ConfirmationService;
 import com.mctv.flutterwave.feignclient.ConfirmationServiceProxy;
 import com.mctv.flutterwave.models.UpdatePayload;
 import com.mctv.flutterwave.repositories.PayloadRepository;
 import com.mctv.flutterwave.repositories.UpdatePayloadRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,11 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Map;
+
+import static com.mctv.flutterwave.utils.URLs.MICROSERVICE_URL;
+
 /**
  * @author Brian Weloba
  * @author Hamisi Andale
- *         <p>
- *         This class is the controller for the confirmation page.
+ * <p>
+ * This class is the controller for the confirmation page.
  */
 @RestController
 @RequestMapping("/flutterwave")
@@ -30,12 +29,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class ConfirmationController implements ConfirmationService {
 
     private final ConfirmationServiceProxy proxy;
-    private PaymentRecordController paymentRecordController;
     private final UpdatePayloadRepository pRepo;
+    private final PaymentRecordController paymentRecordController;
 
     @Autowired
     public ConfirmationController(ConfirmationServiceProxy proxy, PayloadRepository repo,
-            PaymentRecordController paymentRecordController, UpdatePayloadRepository pRepo) {
+                                  PaymentRecordController paymentRecordController, UpdatePayloadRepository pRepo) {
         this.proxy = proxy;
         this.pRepo = pRepo;
         this.paymentRecordController = paymentRecordController;
@@ -44,15 +43,15 @@ public class ConfirmationController implements ConfirmationService {
     /**
      * @param txId The transaction id of the transaction to be retrieved.
      * @return A ModelAndView object containing the confirmation page.
-     *         <p>
-     *         This method retrieves the transaction id from the database and passes
-     *         it to the flutterwave confirmation service.
-     *         On successful retrieval of the transaction, the confirmation page is
-     *         returned.
-     *         On unsuccessful retrieval of the transaction, the error page is
-     *         returned.
+     * <p>
+     * This method retrieves the transaction id from the database and passes
+     * it to the flutterwave confirmation service.
+     * On successful retrieval of the transaction, the confirmation page is
+     * returned.
+     * On unsuccessful retrieval of the transaction, the error page is
+     * returned.
      */
-    @GetMapping(path = "/confirmation/{id}", produces = { "application/json", "text/html" })
+    @GetMapping(path = "/confirmation/{id}", produces = {"application/json", "text/html"})
     public ModelAndView confirm(@PathVariable("id") String txId) {
 
         // confirm transaction before updating backend
@@ -83,10 +82,10 @@ public class ConfirmationController implements ConfirmationService {
     /**
      * @param id The transaction id of the transaction to be retrieved.
      * @return A Map object containing the response from the flutterwave
-     *         confirmation service.
-     *         <p>
-     *         This method retrieves the transaction id from the database and passes
-     *         it to the flutterwave confirmation service.
+     * confirmation service.
+     * <p>
+     * This method retrieves the transaction id from the database and passes
+     * it to the flutterwave confirmation service.
      */
     @Override
     public Map<String, Object> verify(String id) {

@@ -20,9 +20,9 @@ public class GlobalExceptionHandler {
      * @param e        Feign exception
      * @param response HttpServletResponse
      * @return returns the error page view with the specified error message
-     *         <p>
-     *         This method handles all bad request(400) exceptions thrown by the
-     *         confirmation controller.
+     * <p>
+     * This method handles all bad request(400) exceptions thrown by the
+     * confirmation controller.
      */
     @ExceptionHandler(FeignException.BadRequest.class)
     public ModelAndView handleFeignException(FeignException e, HttpServletResponse response) {

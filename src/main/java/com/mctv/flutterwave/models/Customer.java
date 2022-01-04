@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * The class Customer implements serializable
- * 
+ *
  * @see Payload
  */
 public class Customer implements Serializable {
