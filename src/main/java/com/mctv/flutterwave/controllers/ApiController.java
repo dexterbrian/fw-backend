@@ -1,11 +1,12 @@
 package com.mctv.flutterwave.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mctv.flutterwave.feignclient.ApiService;
 import com.mctv.flutterwave.feignclient.ApiServiceProxy;
-import com.mctv.flutterwave.models.Content;
-import com.mctv.flutterwave.models.Customer;
-import com.mctv.flutterwave.models.UpdatePayload;
-import com.mctv.flutterwave.models.User;
+import com.mctv.flutterwave.models.*;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -53,9 +54,11 @@ public class ApiController implements ApiService {
      */
     @GetMapping(path = "/pay")
     public ModelAndView getPaymentDetails(@RequestParam String email, @RequestParam String ref,
-                                          @RequestParam String transactionType, @RequestParam String currency) {
+                                          @RequestParam String transactionType, @RequestParam String currency) throws JsonProcessingException {
         // Get the user details and the content details from the backend
-        Content content = getContentByRef("true", ref);
+        Content content = getContentByRef("true", ref, currency);
+        //get prices per country
+        getPricesPerCountry(content,currency);
         User user = apiServiceProxy.getUsersByEmail(email);
         // Create the customer object
         Customer customer = new Customer();
@@ -80,8 +83,8 @@ public class ApiController implements ApiService {
      */
     @Override
     @GetMapping(path = "/content")
-    public Content getContentByRef(@RequestParam String is_updated, @RequestParam("ref") String contentRef) {
-        return apiServiceProxy.getContentByRef(is_updated, contentRef);
+    public Content getContentByRef(@RequestParam String is_updated, @RequestParam("ref") String contentRef, @RequestParam("currency") String currency) {
+        return apiServiceProxy.getContentByRef(is_updated, contentRef, currency);
     }
 
     /**
@@ -95,4 +98,52 @@ public class ApiController implements ApiService {
         return apiServiceProxy.getUsersByEmail(email);
     }
 
+    public void getPricesPerCountry(Content content, String currency) throws JsonProcessingException {
+        //configure objectMapper to deserialize string to json
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+
+        //Get prices per country as a string
+        String estPrice = content.getEst_price();
+        String rentalPrice = content.getRental_price();
+        String pvodPrice = content.getPvod_price();
+        
+        //Convert string to json
+        CountryPrice estPriceObj = objectMapper.readValue(estPrice, new TypeReference<CountryPrice>() {});
+        CountryPrice rentalPriceObj = objectMapper.readValue(rentalPrice, new TypeReference<CountryPrice>() {});
+        CountryPrice pvodPriceObj = objectMapper.readValue(pvodPrice, new TypeReference<CountryPrice>() {});
+        
+        //Update prices depending on currency
+        switch (currency) {
+            case "NGN":
+                setPrice(content, estPriceObj.getNigeria(), rentalPriceObj.getNigeria(), pvodPriceObj.getNigeria());
+                break;
+            case "KES":
+                setPrice(content, estPriceObj.getKenya(), rentalPriceObj.getKenya(), pvodPriceObj.getKenya());
+                break;
+            case "GHS":
+                setPrice(content, estPriceObj.getGhana(), rentalPriceObj.getGhana(), pvodPriceObj.getGhana());
+                break;
+            case "ZAR":
+                setPrice(content, estPriceObj.getSouthafrica(), rentalPriceObj.getSouthafrica(), pvodPriceObj.getSouthafrica());
+                break;
+            case "UGX":
+                setPrice(content, estPriceObj.getUganda(), rentalPriceObj.getUganda(), pvodPriceObj.getUganda());
+                break;
+            case "TZS":
+                setPrice(content, estPriceObj.getTanzania(), rentalPriceObj.getTanzania(), pvodPriceObj.getTanzania());
+                break;
+            case "RWF":
+                setPrice(content, estPriceObj.getRwanda(), rentalPriceObj.getRwanda(), pvodPriceObj.getRwanda());
+                break;
+        }
+        
+        
+    }
+
+    private void setPrice(Content content, String estPriceObj, String rentalPriceObj, String pvodPriceObj) {
+        content.setEst_price(estPriceObj);
+        content.setRental_price(rentalPriceObj);
+        content.setPvod_price(pvodPriceObj);
+    }
 }

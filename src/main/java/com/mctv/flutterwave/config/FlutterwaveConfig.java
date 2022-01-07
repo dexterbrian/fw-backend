@@ -16,6 +16,10 @@ public class FlutterwaveConfig {
     @Value("${flutterwave.secret-key}")
     private String secretKey;
 
+    /**
+     * Request interceptor for the flutterwave api.
+     * @return RequestInterceptor
+     */
     @Bean
     public RequestInterceptor requestInterceptor() {
         return requestTemplate -> requestTemplate.header("Authorization", "Bearer " + secretKey);

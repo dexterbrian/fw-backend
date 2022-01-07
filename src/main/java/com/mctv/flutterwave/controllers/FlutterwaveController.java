@@ -64,6 +64,7 @@ public class FlutterwaveController implements FlutterwaveService {
     public ModelAndView payment(Content content, Customer customer, String transactionType, UpdatePayload uPayload) {
         Payload payload = getPayload(content, customer, transactionType);
         uPayload.setTx(payload.getTx_ref());
+        payload.setCurrency(uPayload.getCurrency());
         pRepo.save(uPayload);
         return makePayment(payload);
     }
@@ -201,11 +202,9 @@ public class FlutterwaveController implements FlutterwaveService {
         // payload.setAmount(amount);
         payload.setPayment_options("card");
         payload.setCustomer(customer);
-        // todo:work on geotagging to get currency
-        // payload.setCurrency(content.getCurrency());
-        payload.setCurrency("KES");
         Meta meta = new Meta();
         meta.setContentRef(content.getRef());
+        meta.setTransactiontype(transactionType);
         payload.setMeta(meta);
         payload.setRedirect_url(MICROSERVICE_URL + "/flutterwave/callback/");
         return payload;

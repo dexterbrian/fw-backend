@@ -58,12 +58,11 @@ public class Payload implements Serializable {
 
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formattedDateTime = now.format(formatter);
-        this.time = formattedDateTime;
+        this.time = now.format(formatter);
         this.tx_ref = UUID.randomUUID().toString();
         this.ref = tx_ref;
         Customizations custom = new Customizations("MyMoviesAfrica", "Bring Cinema Home!",
-                "https://mymovies.africa/static/media/mma-logo.885180a6.png");
+                "https://i.ibb.co/ygjzgr8/My-Movie-Africa-Transparent-BG-Logo-Black-Tagline.png");
         this.customizations = custom;
     }
 

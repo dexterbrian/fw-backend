@@ -65,6 +65,10 @@ public class ModelAndViewController {
     @GetMapping("/retry-payment")
     public ModelAndView retryPayment(@RequestParam String ref) {
         Payload payload = repo.findByRef(ref);
-        return controller.makePayment(payload);
+//        return controller.makePayment(payload);
+        //http://localhost:8081/data/pay?email=mctvdev@gmail.com&ref=513e245f30cb5774&transactionType=est&currency=KES
+        return new ModelAndView("redirect:" + MICROSERVICE_URL + "/data/pay?email=" + payload.getCustomer().getEmail() +
+                "&ref=" + payload.getMeta().getContentRef() + "&transactionType=" + payload.getMeta().getTransactiontype() + "&currency=" + payload.getCurrency());
+
     }
 }

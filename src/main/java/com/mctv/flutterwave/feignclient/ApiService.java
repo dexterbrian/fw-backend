@@ -17,6 +17,7 @@ public interface ApiService {
 
     /**
      * @param contentRef The content reference.
+     * @param is_updated For the backend to work properly
      * @return The requested content.
      * <p>
      * This method returns the content for the given content reference.
@@ -27,7 +28,7 @@ public interface ApiService {
     // inside response
     // @ResponeParam ...?email=value
     // @PatrhVariable .../{variable}
-    Content getContentByRef(@RequestParam String is_updated, @RequestParam("ref") String contentRef);
+    Content getContentByRef(@RequestParam String is_updated, @RequestParam("ref") String contentRef,@RequestParam("currency") String currency);
 
     /**
      * @param email The user's email.

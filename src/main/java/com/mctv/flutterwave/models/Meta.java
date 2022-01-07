@@ -12,6 +12,16 @@ import java.io.Serializable;
 public class Meta implements Serializable {
     @Expose
     String contentRef;
+    @Expose
+    String transactiontype;
+
+    public String getTransactiontype() {
+        return transactiontype;
+    }
+
+    public void setTransactiontype(String transactiontype) {
+        this.transactiontype = transactiontype;
+    }
 
     /**
      * Gets the content ref

@@ -16,6 +16,10 @@ public class ConfirmationConfig {
     @Value("${flutterwave.secret-key}")
     private String secretKey;
 
+    /**
+     * The request interceptor for the confirmation api.
+     * @return the request interceptor
+     */
     @Bean
     public RequestInterceptor requestInterceptor() {
         return requestTemplate -> {
