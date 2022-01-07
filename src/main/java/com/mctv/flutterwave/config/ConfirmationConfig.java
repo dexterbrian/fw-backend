@@ -18,6 +18,7 @@ public class ConfirmationConfig {
 
     /**
      * The request interceptor for the confirmation api.
+     *
      * @return the request interceptor
      */
     @Bean

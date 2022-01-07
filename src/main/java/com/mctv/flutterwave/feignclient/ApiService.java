@@ -28,7 +28,7 @@ public interface ApiService {
     // inside response
     // @ResponeParam ...?email=value
     // @PatrhVariable .../{variable}
-    Content getContentByRef(@RequestParam String is_updated, @RequestParam("ref") String contentRef,@RequestParam("currency") String currency);
+    Content getContentByRef(@RequestParam String is_updated, @RequestParam("ref") String contentRef, @RequestParam("currency") String currency);
 
     /**
      * @param email The user's email.

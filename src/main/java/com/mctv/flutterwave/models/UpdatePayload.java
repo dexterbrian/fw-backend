@@ -33,7 +33,6 @@ public class UpdatePayload {
 
     /**
      * Updates the payload
-     *
      */
     public UpdatePayload() {
         this.id = UUID.randomUUID();

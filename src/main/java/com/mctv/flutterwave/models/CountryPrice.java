@@ -1,6 +1,6 @@
 package com.mctv.flutterwave.models;
 
-public class CountryPrice{
+public class CountryPrice {
     String kenya;
     String nigeria;
     String uganda;

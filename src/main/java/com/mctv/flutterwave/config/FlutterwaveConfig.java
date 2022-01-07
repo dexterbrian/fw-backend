@@ -18,6 +18,7 @@ public class FlutterwaveConfig {
 
     /**
      * Request interceptor for the flutterwave api.
+     *
      * @return RequestInterceptor
      */
     @Bean

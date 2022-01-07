@@ -33,11 +33,12 @@ public class ConfirmationController implements ConfirmationService {
     private final PaymentRecordController paymentRecordController;
 
     /**
-     *  This method is the constructor for the ConfirmationController class.
-     * @param proxy The feign-client for the confirmation service.
-     * @param repo The repository for the update payload.
+     * This method is the constructor for the ConfirmationController class.
+     *
+     * @param proxy                   The feign-client for the confirmation service.
+     * @param repo                    The repository for the update payload.
      * @param paymentRecordController The controller for the payment record.
-     * @param pRepo The repository for the update payload.
+     * @param pRepo                   The repository for the update payload.
      */
     @Autowired
     public ConfirmationController(ConfirmationServiceProxy proxy, PayloadRepository repo,

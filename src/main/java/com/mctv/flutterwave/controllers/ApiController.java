@@ -58,7 +58,7 @@ public class ApiController implements ApiService {
         // Get the user details and the content details from the backend
         Content content = getContentByRef("true", ref, currency);
         //get prices per country
-        getPricesPerCountry(content,currency);
+        getPricesPerCountry(content, currency);
         User user = apiServiceProxy.getUsersByEmail(email);
         // Create the customer object
         Customer customer = new Customer();
@@ -107,12 +107,15 @@ public class ApiController implements ApiService {
         String estPrice = content.getEst_price();
         String rentalPrice = content.getRental_price();
         String pvodPrice = content.getPvod_price();
-        
+
         //Convert string to json
-        CountryPrice estPriceObj = objectMapper.readValue(estPrice, new TypeReference<CountryPrice>() {});
-        CountryPrice rentalPriceObj = objectMapper.readValue(rentalPrice, new TypeReference<CountryPrice>() {});
-        CountryPrice pvodPriceObj = objectMapper.readValue(pvodPrice, new TypeReference<CountryPrice>() {});
-        
+        CountryPrice estPriceObj = objectMapper.readValue(estPrice, new TypeReference<CountryPrice>() {
+        });
+        CountryPrice rentalPriceObj = objectMapper.readValue(rentalPrice, new TypeReference<CountryPrice>() {
+        });
+        CountryPrice pvodPriceObj = objectMapper.readValue(pvodPrice, new TypeReference<CountryPrice>() {
+        });
+
         //Update prices depending on currency
         switch (currency) {
             case "NGN":
@@ -137,8 +140,8 @@ public class ApiController implements ApiService {
                 setPrice(content, estPriceObj.getRwanda(), rentalPriceObj.getRwanda(), pvodPriceObj.getRwanda());
                 break;
         }
-        
-        
+
+
     }
 
     private void setPrice(Content content, String estPriceObj, String rentalPriceObj, String pvodPriceObj) {

@@ -598,7 +598,7 @@ public class Content {
             price = Float.parseFloat(this.getPvod_price()) * (100 - discount) / 100;
         } else if ("est".equals(tx_type)) {
             discount = Float.parseFloat(this.getEstDiscount());
-           price = Float.parseFloat(this.getEst_price()) * (100 - discount) / 100;
+            price = Float.parseFloat(this.getEst_price()) * (100 - discount) / 100;
         } else {
             return "0";
         }
