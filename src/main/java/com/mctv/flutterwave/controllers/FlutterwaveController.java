@@ -198,8 +198,6 @@ public class FlutterwaveController implements FlutterwaveService {
                 payload.setAmount(content.getPvod_price());
             }
         }
-        // String amount = content.getEst_price();
-        // payload.setAmount(amount);
         payload.setPayment_options("card");
         payload.setCustomer(customer);
         Meta meta = new Meta();

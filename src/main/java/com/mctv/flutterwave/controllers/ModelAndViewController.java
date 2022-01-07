@@ -22,7 +22,6 @@ import static com.mctv.flutterwave.utils.URLs.MICROSERVICE_URL;
 @Controller
 @EnableFeignClients(basePackageClasses = FlutterwaveServiceProxy.class)
 public class ModelAndViewController {
-    private final FlutterwaveController controller;
     private final PayloadRepository repo;
 
     /**
@@ -33,7 +32,6 @@ public class ModelAndViewController {
     @Autowired
     public ModelAndViewController(PayloadRepository repo, FlutterwaveController controller) {
         this.repo = repo;
-        this.controller = controller;
     }
 
     /**
@@ -45,6 +43,7 @@ public class ModelAndViewController {
      * <p>
      * This method is used to display the payment error page
      */
+    @SuppressWarnings("SameReturnValue")
     @GetMapping(value = "/error", produces = {"text/html",
             "application/json"})
     public String error(@RequestParam String status, @RequestParam String message,

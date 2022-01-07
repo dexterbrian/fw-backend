@@ -28,12 +28,8 @@ public class UpdatePayload {
     private String ref;
     @Expose
     private String tx;
-    // @Expose
-    // private String isflutterwave;
     @Expose
     private String currency;
-    // @Expose
-    // private String transactioncode;
 
     /**
      * Updates the payload

@@ -9,7 +9,4 @@ public class PricePerCountry {
         return this.estPrice;
     }
 
-    public void setEstPrice(String estPrice) {
-
-    }
 }

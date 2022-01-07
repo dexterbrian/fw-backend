@@ -45,7 +45,7 @@ public class ApiController implements ApiService {
      * @param ref             The content's reference used to fetch the content's
      *                        details
      * @param transactionType The transaction type used to fetch the payment details
-     *                        i.e EST, PVOD, or RENTAL
+     *                        i.e. EST, PVOD, or RENTAL
      * @param currency        The currency used to make the payment
      * @return The rave model payment view for the flutterwave payment
      * <p>

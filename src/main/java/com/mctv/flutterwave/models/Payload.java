@@ -16,9 +16,9 @@ import java.util.UUID;
 
 @Entity
 
-/**
- * The class Payload implements serializable. This class models a payload for
- * the transaction.
+/*
+  The class Payload implements serializable. This class models a payload for
+  the transaction.
  */
 public class Payload implements Serializable {
     @Id
@@ -39,8 +39,6 @@ public class Payload implements Serializable {
     private String description;
     @Expose
     private String payment_options;
-    // @Expose
-    // private String public_key;
     private transient String tx_ref;
     @Expose
     private String ref;
@@ -61,20 +59,12 @@ public class Payload implements Serializable {
         this.time = now.format(formatter);
         this.tx_ref = UUID.randomUUID().toString();
         this.ref = tx_ref;
-        Customizations custom = new Customizations("MyMoviesAfrica", "Bring Cinema Home!",
+        this.customizations = new Customizations("MyMoviesAfrica", "Bring Cinema Home!",
                 "https://i.ibb.co/ygjzgr8/My-Movie-Africa-Transparent-BG-Logo-Black-Tagline.png");
-        this.customizations = custom;
     }
 
     @Override
 
-    /**
-     *
-     * Equals
-     *
-     * @param o the o
-     * @return boolean
-     */
     public boolean equals(Object o) {
 
         if (this == o)
@@ -93,12 +83,6 @@ public class Payload implements Serializable {
 
     @Override
 
-    /**
-     *
-     * Hash code
-     *
-     * @return int
-     */
     public int hashCode() {
 
         return Objects.hash(id, time, customer, amount, currency, country, description, payment_options, tx_ref, ref,
@@ -284,14 +268,6 @@ public class Payload implements Serializable {
 
         this.description = description;
     }
-
-    // public String getPublic_key() {
-    // return public_key;
-    // }
-    //
-    // public void setPublic_key(String public_key) {
-    // this.public_key = public_key;
-    // }
 
     /**
      * Gets the tx_ref

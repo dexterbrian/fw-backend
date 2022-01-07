@@ -12,9 +12,9 @@ import java.util.UUID;
 
 @Entity
 
-/**
- * The class Flutterwave response implements serializable. Models the response
- * gotten from the flutterwave api.
+/*
+  The class Flutterwave response implements serializable. Models the response
+  gotten from the flutterwave api.
  */
 public class FlutterwaveResponse implements Serializable {
     @Id
