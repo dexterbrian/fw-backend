@@ -91,12 +91,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.GitHub.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
-            <version>3.0.4</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
             <version>3.0.4</version>
