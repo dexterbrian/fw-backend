@@ -76,7 +76,9 @@ public class ConfirmationController implements ConfirmationService {
             UpdatePayload uPayload = pRepo.findByTx(tx_ref);
             paymentRecordController.recordPayment(uPayload.getUser_id(), uPayload.getPurchase_type().toUpperCase(),
                     uPayload.getRef(), "true", uPayload.getCurrency(), txId);
-            return new ModelAndView("redirect:https://mymovies.africa/view/" + uPayload.getRef());
+            // return new ModelAndView("redirect:https://mymovies.africa/view/" + uPayload.getRef()); old redirect url
+            return new ModelAndView("redirect:https://web.mymovies.africa/view/" + uPayload.getRef()); 
+
         } else {
             // todo:wait and try again
             return new ModelAndView("redirect:" + MICROSERVICE_URL + "/error?status=" + status + "&message=" + message
