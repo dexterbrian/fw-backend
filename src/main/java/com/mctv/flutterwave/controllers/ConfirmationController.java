@@ -77,7 +77,7 @@ public class ConfirmationController implements ConfirmationService {
             paymentRecordController.recordPayment(uPayload.getUser_id(), uPayload.getPurchase_type().toUpperCase(),
                     uPayload.getRef(), "true", uPayload.getCurrency(), txId);
             // return new ModelAndView("redirect:https://mymovies.africa/view/" + uPayload.getRef()); old redirect url
-            return new ModelAndView("redirect:https://web.mymovies.africa/view/" + uPayload.getRef()); 
+            return new ModelAndView("redirect:https://web.mymovies.africa/playback/" + uPayload.getRef());
 
         } else {
             // todo:wait and try again
